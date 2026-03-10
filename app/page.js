@@ -8,48 +8,94 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="hero">
-        <h1>Build Faster. Automate Smarter.</h1>
-        <p>Professional websites, web apps, and mobile products — engineered for performance, designed for growth.</p>
+        <div className="hero-bg-pattern" aria-hidden="true"/>
+        <div className="hero-content">
+          <div className="hero-badge">🍁 Canadian Digital Ecosystem</div>
+          <h1>Build Faster.<br/>Automate Smarter.</h1>
+          <p>Professional websites, web apps, and mobile products —<br/>engineered for performance, designed for growth.</p>
+          <div className="hero-actions">
+            <a href="/services" className="btn-primary">View Services</a>
+            <a href="/contact" className="btn-secondary">Start a Project</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Bar */}
+      <section className="stats-bar">
+        <div className="container">
+          <div className="stats-inner">
+            <div className="stat">
+              <span className="stat-number">3</span>
+              <span className="stat-label">Divisions</span>
+            </div>
+            <div className="stat-divider"/>
+            <div className="stat">
+              <span className="stat-number">11</span>
+              <span className="stat-label">Services</span>
+            </div>
+            <div className="stat-divider"/>
+            <div className="stat">
+              <span className="stat-number">100%</span>
+              <span className="stat-label">Canadian</span>
+            </div>
+            <div className="stat-divider"/>
+            <div className="stat">
+              <span className="stat-number">1</span>
+              <span className="stat-label">Team for Everything</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Why Clarix */}
       <section className="section">
         <div className="container">
-          <h2 className="section-title">Why Clarix</h2>
-          <div className="services">
+          <div className="section-label">Why Clarix</div>
+          <h2 className="section-title">One ecosystem.<br/>Every digital need.</h2>
+          <div className="cards-grid">
             <div className="card">
+              <div className="card-icon">⚡</div>
               <h3>Full Stack</h3>
-              <p>From your first website to a full mobile app — one team handles everything. No handoffs, no miscommunication, no starting over with someone new.</p>
+              <p>From your first website to a full mobile app — one team handles everything. No handoffs, no miscommunication.</p>
             </div>
             <div className="card">
+              <div className="card-icon">⚙️</div>
               <h3>Automation First</h3>
-              <p>We build systems that work while you don't — contact forms, email workflows, notifications, and integrations that eliminate repetitive manual work from day one.</p>
+              <p>We build systems that work while you don't — forms, workflows, notifications, and integrations from day one.</p>
             </div>
             <div className="card">
+              <div className="card-icon">📈</div>
               <h3>Built for Growth</h3>
-              <p>We don't just build websites. We build brands that stand out, attract the right clients, and keep them coming back. Every decision we make is designed for the long term.</p>
+              <p>We build brands that stand out, attract the right clients, and keep them coming back for the long term.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Divisions */}
-      <section className="section" style={{ background: 'white' }}>
+      <section className="section section-alt">
         <div className="container">
-          <h2 className="section-title">Clarix Divisions</h2>
-          <p className="section-subtitle">Not sure where to start? Most clients begin with Clarix Digital.</p>
-          <div className="services">
-            <div className="card">
+          <div className="section-label">Our Divisions</div>
+          <h2 className="section-title">Find your starting point.</h2>
+          <p className="section-subtitle">Not sure where to begin? Most clients start with Clarix Digital.</p>
+          <div className="divisions-grid">
+            <div className="division-card">
+              <div className="division-icon digital">D</div>
               <h3>Clarix Digital</h3>
-              <p>For small business owners ready to launch their online presence. You get a professional website, a starter brand package, and 5 social media posts to hit the ground running — everything you need to show up with confidence from day one.</p>
+              <p>For small businesses launching their online presence. Website, brand kit, and social starter — all in one package.</p>
+              <a href="/services" className="card-link">View packages →</a>
             </div>
-            <div className="card">
+            <div className="division-card">
+              <div className="division-icon web">W</div>
               <h3>Clarix Web</h3>
-              <p>For businesses and freelancers who already have a website but are ready for more. We expand your digital presence into custom web apps, client portals, and SaaS-ready platforms that grow as fast as your services do.</p>
+              <p>For businesses ready to expand into web apps, client portals, and SaaS-ready platforms.</p>
+              <a href="/services" className="card-link">View packages →</a>
             </div>
-            <div className="card">
+            <div className="division-card">
+              <div className="division-icon apps">A</div>
               <h3>Clarix Apps</h3>
-              <p>For medium-sized businesses with an established web presence that are ready to go mobile. We build iOS and Android apps that give your customers a dedicated experience — and your business a serious competitive edge.</p>
+              <p>For established businesses ready to go mobile with a full iOS and Android app experience.</p>
+              <a href="/services" className="card-link">View packages →</a>
             </div>
           </div>
         </div>
@@ -58,19 +104,25 @@ export default function HomePage() {
       {/* Process */}
       <section className="section">
         <div className="container">
-          <h2 className="section-title">Our Process</h2>
-          <div className="services">
-            <div className="card">
-              <h3>01 — Consult</h3>
-              <p>Your business is yours. Before we touch a single line of code, we take the time to understand your mission, your values, and how you want the world to see you. Every decision starts here.</p>
+          <div className="section-label">Our Process</div>
+          <h2 className="section-title">How we work.</h2>
+          <div className="process-grid">
+            <div className="process-step">
+              <div className="process-number">01</div>
+              <h3>Consult</h3>
+              <p>Your business is yours. Before we touch a single line of code, we take the time to understand your mission, values, and vision.</p>
             </div>
-            <div className="card">
-              <h3>02 — Craft</h3>
-              <p>We take what we've learned and shape it into a clear creative direction — one that feels authentically like you, while standing out in a market full of generic, forgettable digital products.</p>
+            <div className="process-arrow">→</div>
+            <div className="process-step">
+              <div className="process-number">02</div>
+              <h3>Craft</h3>
+              <p>We shape what we've learned into a clear creative direction — one that feels authentically like you, while standing out in the market.</p>
             </div>
-            <div className="card">
-              <h3>03 — Complete</h3>
-              <p>With direction locked in, we build with precision. Clean code, thoughtful design, and a final product that represents your business with the professionalism it deserves.</p>
+            <div className="process-arrow">→</div>
+            <div className="process-step">
+              <div className="process-number">03</div>
+              <h3>Complete</h3>
+              <p>With direction locked in, we build with precision. Clean code, thoughtful design, delivered with professionalism.</p>
             </div>
           </div>
         </div>
@@ -78,8 +130,11 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="cta">
-        <h2>Ready to Build Something Great?</h2>
-        <a href="/contact" className="cta-button">Start a Conversation</a>
+        <div className="cta-content">
+          <h2>Ready to Build Something Great?</h2>
+          <p>Let's talk about your project — no obligation, no pressure.</p>
+          <a href="/contact" className="cta-button">Start a Conversation</a>
+        </div>
       </section>
     </>
   )
