@@ -89,7 +89,7 @@ export default function AboutPage() {
         <div className="container">
           <h2 className="section-title">The Team</h2>
           <p className="section-subtitle" style={{ textAlign: 'center', marginBottom: '40px', color: '#9a8a90' }}>
-            Two developers. One platform. Built for Canadian businesses.
+            Two developers. One platform. Built for Canadian businesses. //needs update
           </p>
           <div className="team-grid">
 
