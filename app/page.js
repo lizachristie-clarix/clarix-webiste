@@ -11,11 +11,11 @@ export default function HomePage() {
         <div className="hero-bg-pattern" aria-hidden="true"/>
         <div className="hero-content">
           <div className="hero-badge">🍁 Canadian Digital Ecosystem</div>
-          <h1>Build Faster.<br/>Automate Smarter.</h1>
+          <h1>Build Faster.<br/><span className="hero-gradient-text">Automate Smarter.</span></h1>
           <p>Professional websites, web apps, and mobile products —<br/>engineered for performance, designed for growth.</p>
           <div className="hero-actions">
             <a href="/services" className="btn-primary">View Services</a>
-            <a href="/contact" className="btn-secondary">Start a Project</a>
+            <a href="/contact" className="btn-secondary">Let's Talk</a>
           </div>
         </div>
       </section>
@@ -108,19 +108,19 @@ export default function HomePage() {
           <h2 className="section-title">How we work.</h2>
           <div className="process-grid">
             <div className="process-step">
-              <div className="process-number">01</div>
+              <div className="process-number">🎯</div>
               <h3>Consult</h3>
               <p>Your business is yours. Before we touch a single line of code, we take the time to understand your mission, values, and vision.</p>
             </div>
             <div className="process-arrow">→</div>
             <div className="process-step">
-              <div className="process-number">02</div>
+              <div className="process-number">✏️</div>
               <h3>Craft</h3>
               <p>We shape what we've learned into a clear creative direction — one that feels authentically like you, while standing out in the market.</p>
             </div>
             <div className="process-arrow">→</div>
             <div className="process-step">
-              <div className="process-number">03</div>
+              <div className="process-number">🚀</div>
               <h3>Complete</h3>
               <p>With direction locked in, we build with precision. Clean code, thoughtful design, delivered with professionalism.</p>
             </div>

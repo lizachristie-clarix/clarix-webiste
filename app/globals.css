@@ -62,26 +62,38 @@ nav a:hover { color: white; background: rgba(255,255,255,0.1); }
 /* ── Hero ── */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #2C2C2C 0%, #612D53 50%, #853953 100%);
+  background: linear-gradient(
+    135deg,
+    #1a1a2e,
+    #2C2C2C,
+    #612D53,
+    #853953,
+    #612D53,
+    #2C2C2C
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
   color: white;
   padding: 110px 20px 90px;
   text-align: center;
   overflow: hidden;
 }
 
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .hero-bg-pattern {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(133,57,83,0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(97,45,83,0.3) 0%, transparent 50%),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 40px,
-      rgba(255,255,255,0.02) 40px,
-      rgba(255,255,255,0.02) 80px
-    );
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    radial-gradient(ellipse at 20% 50%, rgba(133,57,83,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(97,45,83,0.25) 0%, transparent 60%);
+  background-size: 60px 60px, 60px 60px, 100% 100%, 100% 100%;
 }
 
 .hero-content { position: relative; z-index: 1; }
@@ -194,17 +206,17 @@ nav a:hover { color: white; background: rgba(255,255,255,0.1); }
 
 .section-label {
   text-align: center;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #853953;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .section-title {
   text-align: center;
-  font-size: 36px;
+  font-size: 44px;
   font-weight: 800;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
@@ -213,10 +225,10 @@ nav a:hover { color: white; background: rgba(255,255,255,0.1); }
 
 .section-subtitle {
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   color: #9a8a90;
   margin-bottom: 48px;
-  max-width: 560px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
@@ -242,8 +254,8 @@ nav a:hover { color: white; background: rgba(255,255,255,0.1); }
 .card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(133,57,83,0.12); }
 
 .card-icon { font-size: 28px; margin-bottom: 16px; }
-.card h3 { color: #853953; font-size: 18px; margin-bottom: 10px; font-weight: 700; }
-.card p { font-size: 14px; color: #666; line-height: 1.7; }
+.card h3 { color: #853953; font-size: 22px; margin-bottom: 12px; font-weight: 700; }
+.card p { font-size: 15px; color: #666; line-height: 1.7; }
 
 /* ── Divisions ── */
 .divisions-grid {
@@ -280,8 +292,8 @@ nav a:hover { color: white; background: rgba(255,255,255,0.1); }
 .division-icon.web { background: linear-gradient(135deg, #612D53, #2C2C2C); }
 .division-icon.apps { background: linear-gradient(135deg, #2C2C2C, #612D53); }
 
-.division-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; color: #2C2C2C; }
-.division-card p { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px; }
+.division-card h3 { font-size: 24px; font-weight: 700; margin-bottom: 12px; color: #2C2C2C; }
+.division-card p { font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 20px; }
 
 .card-link {
   font-size: 14px;
@@ -315,16 +327,17 @@ nav a:hover { color: white; background: rgba(255,255,255,0.1); }
   border: 1px solid #f0eaec;
 }
 
-.process-number {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #853953;
-  margin-bottom: 12px;
+.hero-gradient-text {
+  background: linear-gradient(90deg, #f8c8d4, #e8a0b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.process-step h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
-.process-step p { font-size: 14px; color: #666; line-height: 1.7; }
+.process-number { font-size: 32px; margin-bottom: 12px; }
+
+.process-step h3 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+.process-step p { font-size: 15px; color: #666; line-height: 1.7; }
 
 .process-arrow {
   font-size: 24px;
@@ -369,14 +382,20 @@ footer {
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: 48px;
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
+  align-items: start;
 }
 
 .footer-brand .logo-wrap { margin-bottom: 16px; }
 .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 260px; }
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+}
 
 .footer-col { display: flex; flex-direction: column; gap: 10px; }
 .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #853953; margin-bottom: 4px; }
