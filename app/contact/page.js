@@ -23,6 +23,7 @@ export default function ContactPage() {
     <>
       <section className="section">
         <div className="container">
+          <div className="section-label">Contact</div>
           <h2 className="section-title">Get in Touch</h2>
           <p className="section-subtitle">
             Have a project in mind or just want to explore what Clarix can do for your
@@ -84,8 +85,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Reassurance */}
-      <section className="section" style={{ background: 'white', paddingTop: '40px', paddingBottom: '40px' }}>
+      <section className="section section-alt" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
         <div className="container">
           <div className="contact-reassurance">
             <div className="reassurance-item">

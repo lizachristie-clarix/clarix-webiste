@@ -30,8 +30,8 @@ export default function HomePage() {
             </div>
             <div className="stat-divider"/>
             <div className="stat">
-              <span className="stat-number">11</span>
-              <span className="stat-label">Services</span>
+              <span className="stat-number">∞</span>
+              <span className="stat-label">End-to-End Services</span>
             </div>
             <div className="stat-divider"/>
             <div className="stat">

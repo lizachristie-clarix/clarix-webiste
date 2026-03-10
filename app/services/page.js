@@ -10,12 +10,13 @@ const divisions = [
     description:
       'You get a professional website, a starter brand package, and 5 social media posts to hit the ground running — everything you need to show up with confidence from day one.',
     services: [
-      { name: 'Website (4 pages — Home, About, Services, Contact)', price: '$1,200' },
-      { name: 'Brand Kit (logo, colour palette, fonts)', price: '$800' },
-      { name: 'Social Starter (5 designed posts + reusable templates)', price: '$350' },
+      { name: 'Website (4 pages — Home, About, Services, Contact)', price: '$1,200', contact: false },
+      { name: 'Brand Kit (logo, colour palette, fonts)', price: '$800', contact: false },
+      { name: 'Social Starter (5 designed posts + reusable templates)', price: '$350', contact: false },
     ],
     bundle: '$2,000',
     bundleSaving: 'Save $350',
+    bundleContact: false,
   },
   {
     name: 'Clarix Web',
@@ -23,17 +24,18 @@ const divisions = [
     description:
       'We build custom web apps, client portals, and SaaS-ready platforms that grow as fast as your services do.',
     services: [
-      { name: 'Custom Web Portal or Dashboard', price: '$2,500' },
-      { name: 'User Accounts & Secure Login', price: '$800' },
-      { name: 'Booking System', price: '$1,200' },
-      { name: 'Payment Integration', price: '$800' },
-      { name: 'Client Management System', price: '$1,200' },
-      { name: 'Subscription / Membership System', price: '$1,000' },
-      { name: 'API Integrations with Third-Party Tools', price: '$1,500' },
-      { name: 'Analytics & Reporting Dashboard', price: '$1,000' },
+      { name: 'Custom Web Portal or Dashboard', price: null, contact: true },
+      { name: 'User Accounts & Secure Login', price: '$800', contact: false },
+      { name: 'Booking System', price: '$1,200', contact: false },
+      { name: 'Payment Integration', price: '$800', contact: false },
+      { name: 'Client Management System', price: '$1,200', contact: false },
+      { name: 'Subscription / Membership System', price: '$1,000', contact: false },
+      { name: 'API Integrations with Third-Party Tools', price: null, contact: true },
+      { name: 'Analytics & Reporting Dashboard', price: '$1,000', contact: false },
     ],
-    bundle: '$7,500',
-    bundleSaving: 'Save $2,500',
+    bundle: null,
+    bundleSaving: null,
+    bundleContact: true,
   },
   {
     name: 'Clarix Apps',
@@ -41,15 +43,16 @@ const divisions = [
     description:
       'We build iOS and Android apps that give your customers a dedicated experience — and your business a serious competitive edge.',
     services: [
-      { name: 'iOS + Android App (core screens)', price: '$4,500' },
-      { name: 'User Login / Accounts', price: '$800' },
-      { name: 'Push Notifications', price: '$600' },
-      { name: 'Contact / Inquiry Form', price: '$300' },
-      { name: 'Social Media Links', price: '$150' },
-      { name: 'App Store & Google Play Submission', price: '$500' },
+      { name: 'iOS + Android App (core screens)', price: null, contact: true },
+      { name: 'User Login / Accounts', price: '$800', contact: false },
+      { name: 'Push Notifications', price: '$600', contact: false },
+      { name: 'Contact / Inquiry Form', price: '$300', contact: false },
+      { name: 'Social Media Links', price: '$150', contact: false },
+      { name: 'App Store & Google Play Submission', price: '$500', contact: false },
     ],
-    bundle: '$5,500',
-    bundleSaving: 'Save $1,350',
+    bundle: null,
+    bundleSaving: null,
+    bundleContact: true,
   },
 ]
 
@@ -58,10 +61,11 @@ export default function ServicesPage() {
     <>
       <section className="section">
         <div className="container">
-          <h2 className="section-title">Our Services</h2>
+          <div className="section-label">Services</div>
+          <h2 className="section-title">What We Offer</h2>
           <p className="section-subtitle">
             Every service is available à la carte — pick exactly what your business needs,
-            or choose the full package and save.
+            or choose the full package and save. Complex projects are quoted individually.
           </p>
         </div>
       </section>
@@ -69,7 +73,6 @@ export default function ServicesPage() {
       {divisions.map((division) => (
         <section key={division.name} className="section division-section">
           <div className="container">
-
             <div className="division-header">
               <h2 className="division-name">{division.name}</h2>
               <p className="division-tagline">{division.tagline}</p>
@@ -84,25 +87,37 @@ export default function ServicesPage() {
               {division.services.map((service) => (
                 <div className="pricing-row" key={service.name}>
                   <span>{service.name}</span>
-                  <span className="price">{service.price}</span>
+                  {service.contact ? (
+                    <a href="/contact" className="contact-price-btn">Contact Us</a>
+                  ) : (
+                    <span className="price">{service.price}</span>
+                  )}
                 </div>
               ))}
               <div className="pricing-bundle">
                 <span>
                   Full Package
-                  <span className="bundle-saving">{division.bundleSaving}</span>
+                  {division.bundleSaving && (
+                    <span className="bundle-saving">{division.bundleSaving}</span>
+                  )}
                 </span>
-                <span className="price bundle-price">{division.bundle}</span>
+                {division.bundleContact ? (
+                  <a href="/contact" className="contact-price-btn contact-price-btn-light">Contact Us</a>
+                ) : (
+                  <span className="price bundle-price">{division.bundle}</span>
+                )}
               </div>
             </div>
-
           </div>
         </section>
       ))}
 
       <section className="cta">
-        <h2>Not Sure Which Package is Right for You?</h2>
-        <a href="/contact" className="cta-button">Let's Talk</a>
+        <div className="cta-content">
+          <h2>Not Sure Which Package is Right for You?</h2>
+          <p>Let's talk — no obligation, no pressure.</p>
+          <a href="/contact" className="cta-button">Get a Free Estimate</a>
+        </div>
       </section>
     </>
   )

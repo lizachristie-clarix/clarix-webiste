@@ -553,6 +553,29 @@ footer {
 
 .bundle-price { color: white; font-size: 20px; }
 
+.contact-price-btn {
+  display: inline-block;
+  background: #853953;
+  color: white;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-left: 12px;
+  transition: all 0.2s ease;
+}
+
+.contact-price-btn:hover { background: #612D53; transform: translateY(-1px); }
+
+.contact-price-btn-light {
+  background: rgba(255,255,255,0.25);
+  color: white;
+}
+
+.contact-price-btn-light:hover { background: rgba(255,255,255,0.4); }
+
 /* ── Blog ── */
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
 .blog-division { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #853953; margin-bottom: 10px; }
